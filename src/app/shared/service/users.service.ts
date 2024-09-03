@@ -13,7 +13,7 @@ export class UsersService {
   private url: string = environment.urlApi + this.path;
   constructor(private httpClient: HttpClient) {}
 
-  async getListUsers() {
+  getListUsers() {
     return this.httpClient.get<iResponseApi<iUser[]>>(
       this.url,
       constHttpOptions
