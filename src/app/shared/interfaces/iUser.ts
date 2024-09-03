@@ -1,5 +1,5 @@
 export interface iUser {
   usuID: number;
-  nombre?: string;
+  nombre: string;
   apellido?: string;
 }

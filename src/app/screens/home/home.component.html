@@ -1,3 +1,81 @@
-<p>home works!</p>
+<mat-card>
+  <mat-progress-bar
+    *ngIf="isLoadingResults"
+    mode="indeterminate"
+  ></mat-progress-bar>
+  <mat-card-header>
+    <mat-card-subtitle>Usuarios Degrees</mat-card-subtitle>
+    <mat-card-title>Listado de usuarios</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      En este modulo lograrás consultar el listado de usuarios degrees, donde
+      podrás visualizar su id, nombres y apellidos.
+      <strong>Presiona el botón Consultar</strong>
+    </p>
+    <mat-divider></mat-divider>
 
-<button mat-button>Basic</button>
+    @if (isLoadingResults) {
+    <div class="example-loading-shade">
+      <mat-spinner></mat-spinner>
+    </div>
+    }
+    <table
+      mat-table
+      matSort
+      (matSortChange)="sortData($event)"
+      [dataSource]="dataSource"
+      class="mat-elevation-z8"
+    >
+      <!-- usuID Column -->
+      <ng-container matColumnDef="usuID">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by id"
+        >
+          Id
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.usuID }}</td>
+      </ng-container>
+
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="nombre">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by nombre"
+          style="text-align: center"
+        >
+          Nombre
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="2">
+          <h2 style="margin: 0px; padding: 5px; text-align: center">
+            Sin datos
+          </h2>
+        </td>
+      </tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-fab
+      extended
+      color="primary"
+      class="button-search"
+      (click)="getListUsers()"
+      [disabled]="isLoadingResults"
+    >
+      <mat-icon>search</mat-icon>
+      Consultar
+    </button>
+  </mat-card-actions>
+</mat-card>
