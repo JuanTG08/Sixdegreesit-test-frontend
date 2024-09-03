@@ -1,0 +1,15 @@
+img {
+  width: 109px;
+  height: 100%;
+}
+.logo {
+  width: 109px;
+  margin-right: 10px;
+}
+.container-logo {
+  width: 109px;
+  height: 100%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
