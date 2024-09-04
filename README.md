@@ -1,27 +1,63 @@
-# Frontend
+# SixDegrees - Usuarios
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+## Descripción
 
-## Development server
+SixDegrees - Users es una aplicación frontend desarrollada con Angular 17 y Angular Material 17.3. El propósito de la aplicación es cargar y mostrar una lista de usuarios obtenidos de un servicio backend. El proyecto sigue una arquitectura modular y utiliza buenas prácticas como la organización de código en carpetas según su funcionalidad y el uso de variables de entorno.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Características
 
-## Code scaffolding
+- **Tecnología:** Angular 17 con Angular Material 17.3
+- **Arquitectura:** Estructura modular con componentes re-utilizables.
+- **Funcionalidad principal:** Cargar y mostrar datos de usuarios.
+- **Diseño responsivo:** Utilizando Angular Material para una mejor experiencia de usuario.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pantallazo
 
-## Build
+![Pantallazo de la aplicación](./Vista.png)  <!-- Reemplaza con la ruta correcta -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Estructura del Proyecto
 
-## Running unit tests
+La estructura del proyecto se organiza en diferentes carpetas para mantener un código limpio y modular:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **screens/home:** Contiene el módulo principal de la aplicación, donde se maneja la tabla de usuarios y otras funcionalidades relacionadas.
+- **shared:**
+  - **components:** Contiene los componentes re-utilizables que se pueden utilizar en varias partes de la aplicación.
+  - **constant:** Almacena todas las constantes y valores que reemplazan los *magic strings* en el código.
+  - **interfaces:** Contiene todas las interfaces utilizadas en la aplicación, incluyendo las que definen las peticiones al backend.
+  - **material:** Agrupa todos los módulos de Angular Material que se utilizan en la aplicación.
+  - **service:** Contiene todos los servicios que se encargan de la lógica de negocio y las peticiones HTTP.
 
-## Running end-to-end tests
+## Instalación
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Sigue los pasos a continuación para configurar y ejecutar el proyecto en tu entorno local:
 
-## Further help
+1. **Clona el repositorio:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/tu_usuario/sixdegrees-users-frontend.git
+   cd sixdegrees-users-frontend
+   ```
+
+2. **Instala las dependencias:**
+   Asegúrate de tener *Node.js* instalado y luego ejecuta:
+   ```bash
+   npm install
+   ```
+
+3. **Configuración de Variables de Entorno:**
+   El proyecto utiliza variables de entorno para la configuración. Estas se encuentran en el archivo `src/environments/environment.ts`. Puedes modificarlo según tu entorno de desarrollo.
+   ```typescript
+   export const environment = {
+      apiUrl: 'http://localhost:3000/api',
+   };
+   ```
+4. **Ejecutar la aplicación:**
+   ```bash
+   ng serve
+   ```
+   Luego abre tu navegador y navega a `http://localhost:4200/`.
+
+## Uso
+1. Navega a la página principal de la aplicación.
+2. Haz clic en "Consultar" para cargar la lista de usuarios desde el backend.
+3. Verás la lista de usuarios en la tabla con sus respectivos ID, nombre y apellido.
