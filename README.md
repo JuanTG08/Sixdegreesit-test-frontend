@@ -34,8 +34,8 @@ Sigue los pasos a continuación para configurar y ejecutar el proyecto en tu ent
 1. **Clona el repositorio:**
 
    ```bash
-   git clone https://github.com/tu_usuario/sixdegrees-users-frontend.git
-   cd sixdegrees-users-frontend
+   git clone https://github.com/JuanTG08/Sixdegreesit-test-frontend
+   cd Sixdegreesit-test-frontend
    ```
 
 2. **Instala las dependencias:**
